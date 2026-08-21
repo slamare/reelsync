@@ -1,4 +1,4 @@
-# watchtogether
+# reelsync
 
 Self-hosted совместный просмотр с любого сайта — без браузерных расширений,
 без демонстрации экрана и без загрузки видео на сервер. Комната, очередь,
@@ -26,7 +26,7 @@ Self-hosted совместный просмотр с любого сайта —
 ### Proxmox (LXC одной командой)
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/slamare/watchtogether/main/proxmox/create-ct.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/slamare/reelsync/main/proxmox/create-ct.sh)"
 ```
 
 Создаёт Debian 12 LXC, ставит Node.js, клонирует репозиторий, поднимает
@@ -35,8 +35,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/slamare/watchtogether/ma
 ### Вручную
 
 ```
-git clone https://github.com/slamare/watchtogether.git
-cd watchtogether
+git clone https://github.com/slamare/reelsync.git
+cd reelsync
 npm install
 npm start
 ```

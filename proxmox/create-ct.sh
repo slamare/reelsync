@@ -2,7 +2,7 @@
 set -e
 
 CTID=$(pvesh get /cluster/nextid)
-HOSTNAME="watchtogether"
+HOSTNAME="reelsync"
 STORAGE="local-lvm"
 TEMPLATE_STORAGE="local"
 TEMPLATE="debian-12-standard_12.7-1_amd64.tar.zst"
@@ -30,7 +30,7 @@ pct create "$CTID" "$TEMPLATE_STORAGE:vztmpl/$TEMPLATE" \
 pct start "$CTID"
 sleep 5
 
-pct exec "$CTID" -- bash -c "$(curl -fsSL https://raw.githubusercontent.com/slamare/watchtogether/main/proxmox/install-inside-ct.sh)"
+pct exec "$CTID" -- bash -c "$(curl -fsSL https://raw.githubusercontent.com/slamare/reelsync/main/proxmox/install-inside-ct.sh)"
 
 IP=$(pct exec "$CTID" -- hostname -I | awk '{print $1}')
 echo "CT $CTID запущен, IP: $IP, порт 8080"

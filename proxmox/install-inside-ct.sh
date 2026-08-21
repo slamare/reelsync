@@ -7,18 +7,18 @@ apt-get install -y curl git ca-certificates
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt-get install -y nodejs
 
-git clone https://github.com/slamare/watchtogether.git /opt/watchtogether
-cd /opt/watchtogether
+git clone https://github.com/slamare/reelsync.git /opt/reelsync
+cd /opt/reelsync
 npm ci --omit=dev
 
-cat > /etc/systemd/system/watchtogether.service << 'EOF'
+cat > /etc/systemd/system/reelsync.service << 'EOF'
 [Unit]
-Description=watchtogether
+Description=reelsync
 After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/watchtogether
+WorkingDirectory=/opt/reelsync
 ExecStart=/usr/bin/node server/index.js
 Environment=PORT=8080
 Restart=always
@@ -29,4 +29,4 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl enable --now watchtogether
+systemctl enable --now reelsync
