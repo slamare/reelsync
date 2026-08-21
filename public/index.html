@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>watchtogether</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="player-pane">
+    <iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <div id="empty-state">Очередь пуста — добавь ссылку</div>
+  </div>
+  <div id="side-pane">
+    <form id="add-form">
+      <input id="add-input" type="text" placeholder="Ссылка на видео" autocomplete="off">
+      <button type="submit">+</button>
+    </form>
+    <div id="current-block"></div>
+    <div id="queue-list"></div>
+  </div>
+</div>
+<script src="/uv/uv.bundle.js"></script>
+<script src="/uv/uv.config.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

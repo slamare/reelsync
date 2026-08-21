@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #0e0f12; color: #e6e6e6; }
+#app { display: flex; height: 100vh; }
+#player-pane { flex: 1; position: relative; background: #000; }
+#player { width: 100%; height: 100%; border: 0; }
+#empty-state { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #666; pointer-events: none; }
+#side-pane { width: 320px; border-left: 1px solid #222; padding: 12px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+#add-form { display: flex; gap: 6px; }
+#add-input { flex: 1; padding: 8px; background: #1a1b1f; border: 1px solid #333; color: #eee; border-radius: 6px; }
+#add-form button { padding: 8px 12px; background: #3a63ff; border: 0; color: #fff; border-radius: 6px; cursor: pointer; }
+#current-block { padding: 8px; background: #1a1b1f; border-radius: 6px; font-size: 14px; }
+.queue-item { display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #17181c; border-radius: 6px; font-size: 13px; margin-bottom: 6px; }
+.queue-item button { background: transparent; border: 0; color: #888; cursor: pointer; }
+@media (max-width: 720px) {
+  #app { flex-direction: column; }
+  #side-pane { width: 100%; height: 40vh; border-left: 0; border-top: 1px solid #222; }
+}
